@@ -37,16 +37,6 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-
-			<!-- Maven shade plugin -->
-			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-shade-plugin</artifactId> 
-				<version>2.4.2</version> <executions> <execution> <phase>package</phase> 
-				<goals> <goal>shade</goal> </goals> <configuration> <transformers> <transformer 
-				implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"> 
-				<mainClass>${project.groupId}.${project.artifactId}.app.MainApp</mainClass> 
-				</transformer> </transformers> </configuration> </execution> </executions> 
-				</plugin> -->
-
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<configuration>
