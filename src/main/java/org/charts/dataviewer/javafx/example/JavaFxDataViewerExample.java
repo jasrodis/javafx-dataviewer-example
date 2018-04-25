@@ -5,17 +5,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 @SuppressWarnings("unused")
-public class DataviewerDemo extends Application {
+public class JavaFxDataViewerExample extends Application {
 
-	private static final Logger logger = LoggerFactory.getLogger(DataviewerDemo.class.getName());
+	private static final Logger logger = LoggerFactory.getLogger(JavaFxDataViewerExample.class);
 
-	private final String PROJECT_TITLE = "DataViewerDemo";
+	private final String PROJECT_TITLE = "DataViewer Example";
 	private final int WINDOW_WIDTH = 1024;
 	private final int WINDOW_HEIGHT = 768;
 
@@ -26,16 +27,16 @@ public class DataviewerDemo extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 
-		logger.info("DataviewerDemo Started");
-		
+		logger.info("Dataviewer Example Started");
+
 		/**********************************************
 		 * Change the test
 		 **********************************************/
 		HBox testHBox = test1();
-//		HBox testHBox = test2();
-//		HBox testHBox = test3();
+		// HBox testHBox = test2();
+		// HBox testHBox = test3();
 		/**********************************************/
-		
+
 		Scene mainScene = new Scene(testHBox);
 		stage.setScene(mainScene);
 		stage.setTitle(PROJECT_TITLE);
@@ -46,8 +47,8 @@ public class DataviewerDemo extends Application {
 	}
 
 	private void closeApplication() {
-
 		logger.info("Exiting...");
+		Platform.exit();
 		System.exit(0);
 	}
 

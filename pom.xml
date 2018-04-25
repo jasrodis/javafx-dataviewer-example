@@ -42,7 +42,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>${project.groupId}.dataviewer.javafx.example.DataViewerDemo</mainClass>
+							<mainClass>${project.groupId}.dataviewer.javafx.example.JavaFxDataViewerExample</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>
@@ -65,7 +65,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<mainClass>${project.groupId}.dataviewer.javafx.example.DataViewerDemo</mainClass>
+					<mainClass>${project.groupId}.dataviewer.javafx.example.JavaFxDataViewerExample</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
