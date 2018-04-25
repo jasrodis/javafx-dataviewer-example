@@ -11,10 +11,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-@SuppressWarnings("unused")
 public class JavaFxDataViewerExample extends Application {
 
-	private static final Logger logger = LoggerFactory.getLogger(JavaFxDataViewerExample.class);
+	private static final Logger log = LoggerFactory.getLogger(JavaFxDataViewerExample.class);
 
 	private final String PROJECT_TITLE = "DataViewer Example";
 	private final int WINDOW_WIDTH = 1024;
@@ -27,7 +26,7 @@ public class JavaFxDataViewerExample extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 
-		logger.info("Dataviewer Example Started");
+		log.info("Dataviewer Example Started");
 
 		/**********************************************
 		 * Change the test
@@ -47,11 +46,12 @@ public class JavaFxDataViewerExample extends Application {
 	}
 
 	private void closeApplication() {
-		logger.info("Exiting...");
+		log.info("Exiting...");
 		Platform.exit();
 		System.exit(0);
 	}
 
+	@SuppressWarnings("unused")
 	private HBox test1() {
 		VBox vboxLeft = new VBox();
 		vboxLeft.getChildren().add(JavaFxDataViewerFactory.createDataViewerExample1());
@@ -68,6 +68,7 @@ public class JavaFxDataViewerExample extends Application {
 		return hbox;
 	}
 
+	@SuppressWarnings("unused")
 	private HBox test2() {
 		VBox vboxLeft = new VBox();
 		vboxLeft.getChildren().add(JavaFxDataViewerFactory.createDataViewerTuneExample(1));
@@ -81,6 +82,7 @@ public class JavaFxDataViewerExample extends Application {
 		return hbox;
 	}
 
+	@SuppressWarnings("unused")
 	private HBox test3() {
 		VBox vboxLeft = new VBox();
 		vboxLeft.getChildren().add(JavaFxDataViewerFactory.createDataViewerExample7());
