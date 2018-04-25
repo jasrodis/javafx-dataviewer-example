@@ -1,9 +1,9 @@
-package charts.dataviewer.demo;
+package org.charts.dataviewer.javafx.example;
 
+import org.charts.dataviewer.javafx.example.factory.JavaFxDataViewerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import charts.dataviewer.factory.DataViewerFactory;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
@@ -53,14 +53,14 @@ public class DataviewerDemo extends Application {
 
 	private HBox test1() {
 		VBox vboxLeft = new VBox();
-		vboxLeft.getChildren().add(DataViewerFactory.createDataViewerExample1());
-		vboxLeft.getChildren().add(DataViewerFactory.createDataViewerExample2());
+		vboxLeft.getChildren().add(JavaFxDataViewerFactory.createDataViewerExample1());
+		vboxLeft.getChildren().add(JavaFxDataViewerFactory.createDataViewerExample2());
 		VBox vboxMiddle = new VBox();
-		vboxMiddle.getChildren().add(DataViewerFactory.createDataViewerExample3());
-		vboxMiddle.getChildren().add(DataViewerFactory.createDataViewerExample4());
+		vboxMiddle.getChildren().add(JavaFxDataViewerFactory.createDataViewerExample3());
+		vboxMiddle.getChildren().add(JavaFxDataViewerFactory.createDataViewerExample4());
 		VBox vboxRight = new VBox();
-		vboxRight.getChildren().add(DataViewerFactory.createDataViewerExample5());
-		vboxRight.getChildren().add(DataViewerFactory.createDataViewerExample6());
+		vboxRight.getChildren().add(JavaFxDataViewerFactory.createDataViewerExample5());
+		vboxRight.getChildren().add(JavaFxDataViewerFactory.createDataViewerExample6());
 
 		HBox hbox = new HBox();
 		hbox.getChildren().addAll(vboxLeft, vboxMiddle, vboxRight);
@@ -69,11 +69,11 @@ public class DataviewerDemo extends Application {
 
 	private HBox test2() {
 		VBox vboxLeft = new VBox();
-		vboxLeft.getChildren().add(DataViewerFactory.createDataViewerTuneExample(1));
-		vboxLeft.getChildren().add(DataViewerFactory.createDataViewerTuneExample(2));
+		vboxLeft.getChildren().add(JavaFxDataViewerFactory.createDataViewerTuneExample(1));
+		vboxLeft.getChildren().add(JavaFxDataViewerFactory.createDataViewerTuneExample(2));
 		VBox vboxRight = new VBox();
-		vboxRight.getChildren().add(DataViewerFactory.createDataViewerTuneExample(3));
-		vboxRight.getChildren().add(DataViewerFactory.createDataViewerTuneExample(4));
+		vboxRight.getChildren().add(JavaFxDataViewerFactory.createDataViewerTuneExample(3));
+		vboxRight.getChildren().add(JavaFxDataViewerFactory.createDataViewerTuneExample(4));
 
 		HBox hbox = new HBox();
 		hbox.getChildren().addAll(vboxLeft, vboxRight);
@@ -82,11 +82,11 @@ public class DataviewerDemo extends Application {
 
 	private HBox test3() {
 		VBox vboxLeft = new VBox();
-		vboxLeft.getChildren().add(DataViewerFactory.createDataViewerExample7());
+		vboxLeft.getChildren().add(JavaFxDataViewerFactory.createDataViewerExample7());
 		VBox vboxMiddle = new VBox();
-		vboxMiddle.getChildren().add(DataViewerFactory.createDataViewerExample8());
+		vboxMiddle.getChildren().add(JavaFxDataViewerFactory.createDataViewerExample8());
 		VBox vboxRight = new VBox();
-		vboxRight.getChildren().add(DataViewerFactory.createDataViewerExample9());
+		vboxRight.getChildren().add(JavaFxDataViewerFactory.createDataViewerExample9());
 
 		HBox hbox = new HBox();
 		hbox.getChildren().addAll(vboxLeft, vboxMiddle, vboxRight);

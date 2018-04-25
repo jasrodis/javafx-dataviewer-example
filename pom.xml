@@ -2,12 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>charts</groupId>
-	<artifactId>dataviewer-demo</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<groupId>org.charts</groupId>
+	<artifactId>javafx-dataviewer-example</artifactId>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>dataviewerDemo</name>
+	<name>javafx-dataviewer-example</name>
 
 	<properties>
 		<slf4j.version>1.7.12</slf4j.version>
@@ -16,7 +16,7 @@
 
 	<build>
 
-		<finalName>charts.${project.artifactId}</finalName>
+		<finalName>${groupId}.${project.artifactId}</finalName>
 
 		<!-- Resources -->
 		<resources>
@@ -42,7 +42,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>${project.groupId}.dataviewer.demo.DataviewerDemo</mainClass>
+							<mainClass>${project.groupId}.dataviewer.javafx.example.DataViewerDemo</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>
@@ -65,7 +65,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<mainClass>${project.groupId}.dataviewer.demo.DataviewerDemo</mainClass>
+					<mainClass>${project.groupId}.dataviewer.javafx.example.DataViewerDemo</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -76,9 +76,9 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>charts</groupId>
-			<artifactId>javafx-dataviewer</artifactId>
-			<version>1.0.4</version>
+			<groupId>org.charts</groupId>
+			<artifactId>javafx-dataviewer-wrapper</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 
 		<!-- Logging Logback -->

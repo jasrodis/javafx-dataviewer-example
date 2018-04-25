@@ -1,4 +1,4 @@
-package charts.dataviewer.factory;
+package org.charts.dataviewer.javafx.example.factory;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -10,26 +10,26 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import charts.dataviewer.DataViewer;
-import charts.dataviewer.api.config.DataViewerConfiguration;
-import charts.dataviewer.api.data.PlotData;
-import charts.dataviewer.api.trace.LineTrace;
-import charts.dataviewer.utils.AxisType;
+import org.charts.dataviewer.api.config.DataViewerConfiguration;
+import org.charts.dataviewer.api.data.PlotData;
+import org.charts.dataviewer.api.trace.LineTrace;
+import org.charts.dataviewer.javafx.JavaFxDataViewer;
+import org.charts.dataviewer.utils.AxisType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class DataViewerFactory {
+public class JavaFxDataViewerFactory {
 
-	private final static Logger logger = LoggerFactory.getLogger(DataViewerFactory.class.getName());
+	private final static Logger log = LoggerFactory.getLogger(JavaFxDataViewerFactory.class);
 
 	private static ScheduledExecutorService executor = Executors.newScheduledThreadPool(4);
 
 	private static int index = 0;
 
-	public static DataViewer createDataViewerExample1() {
+	public static JavaFxDataViewer createDataViewerExample1() {
 
-		DataViewer dataviewer = new DataViewer();
-		
+		JavaFxDataViewer dataviewer = new JavaFxDataViewer();
+
 		DataViewerConfiguration config = new DataViewerConfiguration();
 		config.setPlotTitle("Line Trace Example");
 		config.setxAxisTitle("X Example 1");
@@ -48,9 +48,9 @@ public class DataViewerFactory {
 		return dataviewer;
 	}
 
-	public static DataViewer createDataViewerExample2() {
+	public static JavaFxDataViewer createDataViewerExample2() {
 
-		DataViewer dataviewer = new DataViewer();
+		JavaFxDataViewer dataviewer = new JavaFxDataViewer();
 
 		DataViewerConfiguration config = new DataViewerConfiguration();
 		config.setPlotTitle("Multiple Trace Example");
@@ -69,8 +69,8 @@ public class DataViewerFactory {
 		return dataviewer;
 	}
 
-	public static DataViewer createDataViewerExample3() {
-		DataViewer dataviewer = new DataViewer();
+	public static JavaFxDataViewer createDataViewerExample3() {
+		JavaFxDataViewer dataviewer = new JavaFxDataViewer();
 
 		DataViewerConfiguration config = new DataViewerConfiguration();
 		config.setPlotTitle("Bar Trace Example");
@@ -89,8 +89,8 @@ public class DataViewerFactory {
 		return dataviewer;
 	}
 
-	public static DataViewer createDataViewerExample4() {
-		DataViewer dataviewer = new DataViewer();
+	public static JavaFxDataViewer createDataViewerExample4() {
+		JavaFxDataViewer dataviewer = new JavaFxDataViewer();
 
 		DataViewerConfiguration config = new DataViewerConfiguration();
 		config.setPlotTitle("Scatter Trace Example");
@@ -108,29 +108,29 @@ public class DataViewerFactory {
 		return dataviewer;
 	}
 
-	public static synchronized DataViewer createDataViewerTuneExample(int caseIdx) {
+	public static synchronized JavaFxDataViewer createDataViewerTuneExample(int caseIdx) {
 
 		String csvFile = "";
 		String plotTitle = "";
 		switch (caseIdx) {
 		case 1:
-			csvFile = DataViewerFactory.class.getResource("/files/test_file1.csv").getPath();
+			csvFile = JavaFxDataViewerFactory.class.getResource("/files/test_file1.csv").getPath();
 			plotTitle = "Test 1a data";
 			break;
 		case 2:
-			csvFile = DataViewerFactory.class.getResource("/files/test_file2.csv").getPath();
+			csvFile = JavaFxDataViewerFactory.class.getResource("/files/test_file2.csv").getPath();
 			plotTitle = "Test 1b data";
 			break;
 		case 3:
-			csvFile = DataViewerFactory.class.getResource("/files/test_file3.csv").getPath();
+			csvFile = JavaFxDataViewerFactory.class.getResource("/files/test_file3.csv").getPath();
 			plotTitle = "Test 2a data";
 			break;
 		case 4:
-			csvFile = DataViewerFactory.class.getResource("/files/test_file4.csv").getPath();
+			csvFile = JavaFxDataViewerFactory.class.getResource("/files/test_file4.csv").getPath();
 			plotTitle = "Test 2b data";
 			break;
 		default:
-			logger.error("Invalid input for createDataViewerTuneExample(int caseIdx)");
+			log.error("Invalid input for createDataViewerTuneExample(int caseIdx)");
 			return null;
 		}
 
@@ -151,15 +151,15 @@ public class DataViewerFactory {
 				}
 			}
 		} catch (FileNotFoundException ex) {
-			logger.error("FileNotFoundException", ex);
+			log.error("FileNotFoundException", ex);
 		} catch (IOException ex) {
-			logger.error("IOException", ex);
+			log.error("IOException", ex);
 		} finally {
 			if (bufferReader != null) {
 				try {
 					bufferReader.close();
 				} catch (IOException ex) {
-					logger.error("IOException", ex);
+					log.error("IOException", ex);
 				}
 			}
 		}
@@ -169,9 +169,9 @@ public class DataViewerFactory {
 			exampleFrequency[i] = (double) 11000 / (exampleFrequency.length * 2) * i;
 		}
 
-		DataViewer dataviewer = new DataViewer();
-		
-		logger.info("dataviewer id is : {}", dataviewer.getUniqueID());
+		JavaFxDataViewer dataviewer = new JavaFxDataViewer();
+
+		log.info("dataviewer id is : {}", dataviewer.getId());
 
 		DataViewerConfiguration config = new DataViewerConfiguration();
 		config.setPlotTitle(plotTitle);
@@ -190,13 +190,16 @@ public class DataViewerFactory {
 
 		dataviewer.updatePlot(plotData);
 
-		executor.scheduleAtFixedRate(() -> DataViewerFactory.updateTune(dataviewer, bigTrace, parsedTuneDataDouble, plotData), 5000, 150, TimeUnit.MILLISECONDS);
+		executor.scheduleAtFixedRate(
+				() -> JavaFxDataViewerFactory.updateTune(dataviewer, bigTrace, parsedTuneDataDouble, plotData), 5000,
+				150, TimeUnit.MILLISECONDS);
 
 		return dataviewer;
 
 	}
 
-	private static void updateTune(DataViewer dataviewer, LineTrace<Double> tuneTrace, List<Double[]> tuneData, PlotData plotData) {
+	private static void updateTune(JavaFxDataViewer dataviewer, LineTrace<Double> tuneTrace, List<Double[]> tuneData,
+			PlotData plotData) {
 		if (index == tuneData.size())
 			index = 0;
 		tuneTrace.setyArray(tuneData.get(index++));
@@ -205,9 +208,9 @@ public class DataViewerFactory {
 		dataviewer.updatePlot(plot);
 	}
 
-	public static DataViewer createDataViewerExample5() {
+	public static JavaFxDataViewer createDataViewerExample5() {
 
-		DataViewer dataviewer = new DataViewer();
+		JavaFxDataViewer dataviewer = new JavaFxDataViewer();
 
 		DataViewerConfiguration config = new DataViewerConfiguration();
 		config.setPlotTitle("Hybrid Log Trace Example");
@@ -229,9 +232,9 @@ public class DataViewerFactory {
 		return dataviewer;
 	}
 
-	public static DataViewer createDataViewerExample6() {
+	public static JavaFxDataViewer createDataViewerExample6() {
 
-		DataViewer dataviewer = new DataViewer();
+		JavaFxDataViewer dataviewer = new JavaFxDataViewer();
 
 		DataViewerConfiguration config = new DataViewerConfiguration();
 		config.setPlotTitle("TimeSeries Trace Example");
@@ -248,9 +251,9 @@ public class DataViewerFactory {
 		return dataviewer;
 	}
 
-	public static DataViewer createDataViewerExample7() {
+	public static JavaFxDataViewer createDataViewerExample7() {
 
-		DataViewer dataviewer = new DataViewer();
+		JavaFxDataViewer dataviewer = new JavaFxDataViewer();
 
 		DataViewerConfiguration config = new DataViewerConfiguration();
 		config.setPlotTitle("Contour Example");
@@ -265,9 +268,9 @@ public class DataViewerFactory {
 		return dataviewer;
 	}
 
-	public static DataViewer createDataViewerExample8() {
+	public static JavaFxDataViewer createDataViewerExample8() {
 
-		DataViewer dataviewer = new DataViewer();
+		JavaFxDataViewer dataviewer = new JavaFxDataViewer();
 
 		DataViewerConfiguration config = new DataViewerConfiguration();
 		config.setPlotTitle("Histogram Example");
@@ -282,9 +285,9 @@ public class DataViewerFactory {
 		return dataviewer;
 	}
 
-	public static DataViewer createDataViewerExample9() {
+	public static JavaFxDataViewer createDataViewerExample9() {
 
-		DataViewer dataviewer = new DataViewer();
+		JavaFxDataViewer dataviewer = new JavaFxDataViewer();
 
 		DataViewerConfiguration config = new DataViewerConfiguration();
 		config.setPlotTitle("Density Example");
