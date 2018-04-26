@@ -7,6 +7,7 @@
 *  Go to the project location.
 *  Run the maven wrapper!  `./mvnw clean compile exec:java`
 *  JavaFX window with sample charts is being created!
+*  Documentation : https://github.com/jasrodis/javafx-dataviewer-wrapper
 
 
 *  Remember : You can see the charts is your browser too! Check your console output and navigate to one of the pages !  http://localhost:8090/view/{uniqueId}
