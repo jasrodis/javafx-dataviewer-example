@@ -6,6 +6,13 @@
 	<artifactId>javafx-dataviewer-example</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
+	
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
 
 	<name>javafx-dataviewer-example</name>
 
@@ -16,7 +23,7 @@
 
 	<build>
 
-		<finalName>${groupId}.${project.artifactId}</finalName>
+		<finalName>${project.groupId}.${project.artifactId}</finalName>
 
 		<!-- Resources -->
 		<resources>
@@ -75,11 +82,14 @@
 	<!-- Dependencies -->
 	<dependencies>
 
+		<!--
 		<dependency>
 			<groupId>org.charts</groupId>
 			<artifactId>javafx-dataviewer-wrapper</artifactId>
 			<version>1.0.0</version>
 		</dependency>
+		-->
+		
 
 		<!-- Logging Logback -->
 		<dependency>
@@ -93,11 +103,17 @@
 			<artifactId>jcl-over-slf4j</artifactId>
 			<version>1.7.6</version>
 		</dependency>
-
+	
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>com.github.jasrodis</groupId>
+			<artifactId>javafx-dataviewer-wrapper</artifactId>
+			<version>-SNAPSHOT</version>
 		</dependency>
 
 	</dependencies>
