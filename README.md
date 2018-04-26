@@ -1,4 +1,7 @@
 # dataviewer-demo
+
+[![Build Status](https://travis-ci.org/jasrodis/javafx-dataviewer-example.svg?branch=master)](https://travis-ci.org/jasrodis/javafx-dataviewer-example)
+
 * Step one: Download javafx-dataviewer project. (https://github.com/jasrodis/javafx-dataviewer)
 * Step two: Go to project directory and install it to your local repo ( mvn install )
 * Step three: Download dataviewer-demo project & go to the project directory.
