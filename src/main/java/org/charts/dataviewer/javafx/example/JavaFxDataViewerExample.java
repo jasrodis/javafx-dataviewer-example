@@ -27,6 +27,8 @@ public class JavaFxDataViewerExample extends Application {
 	public void start(Stage stage) throws Exception {
 
 		log.info("Dataviewer Example Started");
+		log.info("Using ANSI Console colours. ");
+		log.info("If running in windows change logback.xml. For eclipse install ANSI Console!");
 
 		/**********************************************
 		 * Change the test
