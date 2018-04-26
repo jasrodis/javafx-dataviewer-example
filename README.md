@@ -1,10 +1,14 @@
-# dataviewer-demo
+![Smaller icon](https://raw.githubusercontent.com/jasrodis/dataviewer/master/Documentation/images/logo.png "Dataviewer") 
 
 [![Build Status](https://travis-ci.org/jasrodis/javafx-dataviewer-example.svg?branch=master)](https://travis-ci.org/jasrodis/javafx-dataviewer-example)
 
-* Step one: Download javafx-dataviewer project. (https://github.com/jasrodis/javafx-dataviewer)
-* Step two: Go to project directory and install it to your local repo ( mvn install )
-* Step three: Download dataviewer-demo project & go to the project directory.
-* Step four: Run it! ( mvn clean compile && mvn exec:java )   
+## Run the JavaFX examples! 
 
-* Note: Running it from Eclipse will not work if you have the javafx-dataviewer project open! (it will display a white page)
+*  Go to the project location.
+*  Run the maven wrapper!  `./mvnw clean compile exec:java`
+*  JavaFX window with sample charts is being created!
+
+
+*  Remember : You can see the charts is your browser too! Check your console output and navigate to one of the pages !  http://localhost:8090/view/{uniqueId}
+
+
