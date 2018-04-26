@@ -11,4 +11,6 @@
 
 *  Remember : You can see the charts is your browser too! Check your console output and navigate to one of the pages !  http://localhost:8090/view/{uniqueId}
 
+![Smaller icon](https://raw.githubusercontent.com/jasrodis/javafx-dataviewer-wrapper/master/DataviewerDocumentation/images/javafx-dataviewer-window.png "JavaFX dataviewer")
+
 
