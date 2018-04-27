@@ -1,6 +1,8 @@
 ![Smaller icon](https://raw.githubusercontent.com/jasrodis/dataviewer/master/Documentation/images/logo.png "Dataviewer") 
 
-[![Build Status](https://travis-ci.org/jasrodis/javafx-dataviewer-example.svg?branch=master)](https://travis-ci.org/jasrodis/javafx-dataviewer-example)
+[![Build Status](https://travis-ci.org/jasrodis/javafx-dataviewer-example.svg?branch=master)](https://travis-ci.org/jasrodis/javafx-dataviewer-example) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 
 ## Run the JavaFX examples! 
 
