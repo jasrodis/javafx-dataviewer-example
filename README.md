@@ -1,7 +1,30 @@
-![Smaller icon](https://raw.githubusercontent.com/jasrodis/dataviewer/master/Documentation/images/logo.png "Dataviewer") 
+ <p align="center">
+	<img align="center" src="https://raw.githubusercontent.com/jasrodis/dataviewer/master/Documentation/images/logo.png"/>
+</p>
 
-[![Build Status](https://travis-ci.org/jasrodis/javafx-dataviewer-example.svg?branch=master)](https://travis-ci.org/jasrodis/javafx-dataviewer-example) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+<h2 align="center">Exposing charts from Java to JavaFX and to the Web!</h2>
+
+<p align="center">
+  <em>
+  JavaFX
+  · Charts
+  · Websockets
+  · Jetty
+  · Web
+</p>
+
+<p align="center">
+  <a href="https://travis-ci.org/jasrodis/javafx-dataviewer-example">
+    <img alt="travis" src="https://img.shields.io/travis/jasrodis/javafx-dataviewer-example.svg?style=flat-square">
+  </a>
+  <a href="https://jitpack.io/#jasrodis/javafx-dataviewer-wrapper">
+    <img alt="jitpack" src="https://jitpack.io/v/jasrodis/javafx-dataviewer-example.svg?style=flat-square">
+  </a>
+  <a href="https://opensource.org/licenses/MIT">
+    <img alt="licence" src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square">
+  </a>
+</p>
 
 
 ## Run the JavaFX examples! 
