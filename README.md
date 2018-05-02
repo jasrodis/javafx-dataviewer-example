@@ -1,5 +1,5 @@
  <p align="center">
-	<img align="center" src="https://raw.githubusercontent.com/jasrodis/dataviewer/master/Documentation/images/logo.png"/>
+	<img align="center" src="https://raw.githubusercontent.com/jasrodis/dataviewer/master/Documentation/images/javafx-dataviewer.png"/>
 </p>
 
 
